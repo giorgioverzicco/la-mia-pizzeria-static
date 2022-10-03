@@ -1,6 +1,4 @@
 ﻿@{
-    Layout = null;
-
     List<string[]> pizza = new()
     {
         new [] { "Margherita", "La classica pizza", "margherita.png", "4,00"},
@@ -10,49 +8,24 @@
     };
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Pizzeria</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-</head>
-<body>
-<header>
-</header>
-
-<div class="container">
-    <main role="main" class="">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Desc.</th>
-                    <th scope="col">Foto</th>
-                    <th scope="col">Prezzo</th>
-                </tr>
-            </thead>
-            <tbody>
-            @foreach (string[] p in pizza)
-            {
-                <tr>
-                    <td>@p[0]</td>
-                    <td>@p[1]</td>
-                    <td>@p[2]</td>
-                    <td>@Convert.ToDecimal(p[3]).ToString("C")</td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    </main>
-</div>
-
-<footer>
-</footer>
-
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Desc.</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Prezzo</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (string[] p in pizza)
+    {
+        <tr>
+            <td>@p[0]</td>
+            <td>@p[1]</td>
+            <td>@p[2]</td>
+            <td>@Convert.ToDecimal(p[3]).ToString("C")</td>
+        </tr>
+    }
+    </tbody>
+</table>
